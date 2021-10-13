@@ -1,0 +1,30 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+// maven spring boot를 검색하여 dependencies 추가 가능
+dependencies {
+    // REST API 구현을 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    // jpa 관련 기능을 사용하기 위한 라이브러리
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // 인메모리 관계형 데이터베이스
+    runtimeOnly 'com.h2database:h2'
+
+    annotationProcessor("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok")
+
+}
+
+test {
+    useJUnitPlatform()
+}
