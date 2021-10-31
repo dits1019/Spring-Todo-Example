@@ -20,7 +20,7 @@ public class TodoResponse {
         this.order = todoEntity.getOrder();
         this.completed = todoEntity.getCompleted();
         // 해당 아이템의 값을 조회하는 API를 만들기 위해
-        this.url = "http://localhost:8080/" + this.id;
+        this.url = "http://localhost:8065/" + this.id;
     }
 
 }
